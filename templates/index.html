@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Netmiko Cisco - NetworkJourney.com</title>
+</head>
+<body>
+    <h1>Netmiko Cisco Commands</h1>
+    
+    <form method="POST" action="/execute">
+        <label for="device_name">Select Device:</label>
+        <select name="device_name" id="device_name">
+            {% for name, device in devices %}
+            <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="cli_command">Enter CLI Command:</label>
+        <input type="text" name="cli_command" id="cli_command" required><br><br>
+
+        <input type="submit" value="Execute Command">
+    </form>
+
+    {% if output %}
+    <h2>Command Output:</h2>
+    <pre>{{ output }}</pre>
+
+    <!-- Add a download button for output -->
+    <form method="GET" action="/download_output">
+        <input type="hidden" name="output_text" value="{{ output }}">
+        <input type="submit" value="Download Output">
+    </form>
+    {% endif %}
+</body>
+</html>

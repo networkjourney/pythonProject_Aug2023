@@ -1,0 +1,2 @@
+R01,172.16.24.24,admin,cisco,cisco_ios
+R02,172.16.24.25,admin,cisco,cisco_ios
