@@ -19,3 +19,6 @@ for singledevice in multidevice:
         #take backup in text
         with open(singledevice + ".txt", "a") as backup1:
             backup1.write(fetch123)
+
+feature 1 added
+feature 2 added
